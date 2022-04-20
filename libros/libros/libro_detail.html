@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Título: {{ libro.titulo }}</h1>
+
+<p><strong>Resumen:</strong> {{ libro.sinopsis }}</p>
+<p><strong>ISBN:</strong> {{ libro.isbn }}</p> 
+<p><strong>Páginas:</strong> {{ libro.pags }}</p>  
+<p><strong>Año:</strong> {{ libro.ano }}</p>  
+
+<h3>Acciones:</h3>
+<a href="{{ libro.get_absolute_url }}update/">Actualizar libro</a>
+<a href="{{ libro.get_absolute_url }}delete/">Borrar libro</a>
+<a href="/biblio/libros/create/">Crear nuevo libro</a>
+<a href="/biblio/libros/">Ver libros</a>
+
+{% endblock %}
+

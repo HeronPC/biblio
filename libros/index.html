@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Biblioteca (Página Principal)</h1>
+<p>Bienvenido a la biblioteca<p>
+<p>Número de libros en base de datos: {{num_libros}}</p>
+
+<h3>Acciones:</h3>
+<a href="/biblio/libros">Ver libros</a>
+<a href="/biblio/libros/create">Crear libro</a>
+
+{% endblock %}
+

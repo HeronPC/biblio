@@ -1,0 +1,42 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    {% if book.id %}
+    <form action = "/biblio/libros/{{libro.id}}/update/" method = "POST"> 
+    {% else %}
+    <form action = "/biblio/libros/create/" method = "POST"> 
+    {%endif%}
+    
+        {% csrf_token %}  
+
+        <input id="libro_id" type="hidden" name="libro_id" value="{{libro.id}}"> 
+
+        <label for="titulo">Título: </label> <br>
+        <input id="titulo" type="text" name="titulo" value="{{libro.titulo}}"> <br>
+
+        <label for="sinopsis">Resumen: </label> <br>
+        <input id="sinopsis" type="text" name="sinopsis" value="{{libro.sinopsis}}"> <br>
+
+        <label for="isbn">ISBN: </label> <br>
+        <input id="isbn" type="text" name="isbn" value="{{libro.isbn}}"> <br>
+
+        <label for="ano">Año lanzamiento: </label> <br>
+        <input id="ano" type="number" name="ano" value="{{libro.ano}}"> <br>
+
+        <label for="pags">Nº páginas: </label> <br>
+        <input id="pags" type="number" name="pags" value="{{libro.pags}}"> <br>
+
+        {% if libro.id %}
+        <input type="submit" value="Actualizar libro"> 
+        {% else %}
+        <input type="submit" value="Crear libro"> 
+        {%endif%}
+
+    </form> 
+  
+{% endblock %}
+
+
+
+
